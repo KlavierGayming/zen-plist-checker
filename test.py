@@ -1,16 +1,13 @@
 import plistlib as plist
 import checker as c
 
-#fpath = input("Please drag and drop the path to the plist here: ").removesuffix("'").removeprefix("'")
-fpath1 = "/Users/marek/Downloads/config.plist"
+fpath = input("Please drag and drop the path to the plist here: ").removesuffix("'").removeprefix("'")
+parsed = {}
 
-file1 = open(fpath1,'rb')
-
-
-parsed = plist.load(file1)
+with open(fpath,'rb') as file:
+    parsed = plist.load(file)
 
 c.check(parsed)
 
-file1.close()
 
 print("success! end.\n")
