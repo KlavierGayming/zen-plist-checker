@@ -11,4 +11,6 @@ parsed = plist.load(file1)
 
 c.check(parsed)
 
+file1.close()
+
 print("success! end.\n")
